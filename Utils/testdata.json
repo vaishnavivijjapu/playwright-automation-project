@@ -1,0 +1,133 @@
+{
+    "login": 
+    {
+        "username": "Admin",
+   "password" : "admin123"
+    },
+    "employeeDetails":
+    {
+   "firstname1": "Charles",
+   "middlename1": "Kumar",
+   "lastname1":"Damok",
+   "imagepath": "Utils/test-assests/sample.jpg",
+   "credusername" : "Test",
+   "credspassword" : "test123*"
+    },
+    "personaldetails":
+    {
+   "licencenumber" : "12387654267",
+   "licencedate" : "2028-18-08",
+   "nationality" : "Indian",
+   "maritialstatus": "Single",
+   "dateofbirth": "2001-12-03",
+   "gender":"Male",
+   "bloodtype1" : "O+",
+   "Attachment" : "Utils/test-assests/sample.jpg"
+    },
+    "contactdetails":
+    {
+   "street1" : "Chinnabondhilipuram",
+   "street2" : "Bayama Thota",
+   "city" : "Srikakulam",
+   "state":"Andhra Pradesh",
+   "zipcode":"532001",
+   "country":"India",
+   "workemail":"abc@gmail.com",
+   "worknumber":"9878987678",
+   "mobilenumber":"9656765676"
+    },
+    "emergencycontact":
+    {
+   "Emergencyname":"Ranjit Thakre",
+   "Relationshipname" : "Friend",
+   "Mobile":"8767875678"
+    },
+    "dependents":
+    {
+   "DependantName": "Suraj Thakre",
+   "DependentRelation" : "Other",
+   "SpecifyDependant" : "Friend",
+   "Dob":"2005-03-03"
+    },
+    "immigrationdetails":
+    {
+   "PassportNumber" : "BY879876JU",
+   "PassportIssueDate":"2024-30-01",
+   "PassportExpiryDate" : "2034-30-01",
+   "Eligiblestatus":"Approved",
+   "Issuedby":"India",
+   "ReviewDate":"2030-27-05",
+   "Comments": "The immigration page is closed"
+    },
+    "jobdetails":
+    {
+   "joineddate" : "2022-09-26",
+   "jobtitle" : "Automation Tester",
+   "jobcategory": "Operatives",
+   "subunit":"Quality Assurance",
+   "location": "New York Sales Office",
+   "employementstatus" : "Full-Time Contract",
+   "contractstartdate":"2022-09-26",
+   "contractenddate":"2030-09-26",
+   "contractdetailsattachment":"Utils/test-assests/sample.jpg",
+   "terminationdate":"2030-09-26",
+   "terminationreason": "Contract Not Renewed",
+   "terminationnote":"Contract is expired"
+    },
+    "salarydetails":
+    {
+   "salarycomponent": "Credit",
+   "paygrade1" :"Grade 1",
+   "payfrequency":"Hourly",
+   "currency":"United States Dollar",
+   "amount" :"55000",
+   "Comment":"The company belongs to US dollar",
+   "accountnumber":"8767876787",
+   "accounttype":"Savings",
+   "routingnumber":"87987",
+   "amount2":"100000"
+    },
+    "reportdetails":
+    {
+   "supervisiorname":"Ravi",
+   "supervisiormethod" :"Direct"
+    },
+    "membershipdetails":
+    {
+   "Membership" : "ACCA",
+   "paidby" :"Company",
+   "subscriptionamount":"10000",
+   "Currency1":"Albanian Lek",
+   "commencedate" :"2026-18-07",
+   "reneweldate" : "2028-18-07"
+},
+"qualificationdetails":{
+   "workcompanyname" :"Deloitte",
+   "workjobtitle":"Software Engineer",
+   "from":"2022-08-17",
+   "to":"2026-08-17",
+   "workcomment":"I am a work comment",
+   "Degree": "Bachelor's Degree",
+   "Institue":"GITAM",
+   "Major":"CSE",
+   "year":"2022",
+   "gpa":"8.8",
+   "startdate1":"2018-06-01",
+   "enddate1":"2022-05-30",
+   "skill":"JavaScript",
+   "yoe":"3",
+   "skillcomments":"I love JS",
+   "language":"French",
+   "fluency":"Reading",
+   "competency":"Good",
+   "languagecomments":"This is french",
+   "Licence":"Certified Digital Marketing Professional (CDMP)",
+   "licencetype":"Passed",
+   "startdate":"2023-09-19",
+   "enddate":"2027-09-19"
+},
+"employeelistdetails":{
+   "employeeId":"0320",
+   "includes":"Current Employees Only"
+}
+}
