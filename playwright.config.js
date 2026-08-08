@@ -10,9 +10,13 @@ export default defineConfig({
   reporter : 'html',
   use:{
     browserName : 'chromium',
-    headless : false,
-    screenshot : 'on',
-    trace : 'on',
-    slowMo : 2000
+    // headless : false,
+    // screenshot : 'on',
+    // trace : 'on',
+    // slowMo : 2000
+    headless: !!process.env.CI,
+    screenshot: 'only-on-failure',
+    trace: 'retain-on-failure',
+    slowMo: process.env.CI ? 0 : 2000
   }
 });
