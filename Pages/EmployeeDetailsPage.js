@@ -19,8 +19,9 @@ class EmployeeDetailsPage extends BasePage{
     async verifyemployeevalidation(firstname1,employeeId,employementstatus,includes,supervisiorname,workjobtitle,subunit){
         await expect(this.employeename1).toBeVisible();
         await this.employeename1.fill(firstname1);
-        await this.page.locator('.oxd-autocomplete-dropdown').waitFor();
-        await this.page.getByRole('option', { name: /Charles Carter/i }).click();
+        // await this.page.locator('.oxd-autocomplete-dropdown').waitFor();
+        // await this.page.getByRole('option', { name: /Charles Carter/i }).click();
+        await this.page.locator('.oxd-autocomplete-dropdown').getByRole('option').filter({ hasText: firstname1 }) .first().click();
         await expect(this.employeeid1).toBeVisible();
         await this.employeeid1.fill(employeeId);
         await this.employeestatus1.click();
@@ -29,8 +30,9 @@ class EmployeeDetailsPage extends BasePage{
         await this.page.getByRole('option',{name:includes,exact:true}).click();
         await expect(this.supervisiorname).toBeVisible();
         await this.supervisiorname.fill(supervisiorname);
-        await this.page.locator('.oxd-autocomplete-dropdown').waitFor();
-        await this.page.getByRole('option', { name: /Ravi M B/i }).click();
+        // await this.page.locator('.oxd-autocomplete-dropdown').waitFor();
+        // await this.page.getByRole('option', { name: /Ravi M B/i }).click();
+        await this.page.locator('.oxd-autocomplete-dropdown').getByRole('option').filter({ hasText: supervisiorname }) .first().click();
         await this.jobtitle1.click();
         await this.page.getByRole('option',{name:workjobtitle,exact:true}).click();
         await this.subunit1.click();

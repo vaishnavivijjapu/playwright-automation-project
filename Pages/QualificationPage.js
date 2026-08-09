@@ -39,6 +39,7 @@ class QualificationPage extends BasePage{
         this.licenseissuedtae=page.locator('.oxd-input-group').filter({ hasText: 'Issued Date' }).locator('input');
         this.licenseexpirydate=page.locator('.oxd-input-group').filter({ hasText: 'Expiry Date' }).locator('input');
         this.licensesave =page.getByRole('button', { name: 'Save' }).nth(2);
+        this.languageForm = page.locator('form').nth(3);
         //page.locator('.orangehrm-edit-employee-content').filter({ hasText: 'License' }).getByRole('button', { name: 'Save' });
         //page.getByRole('button', { name: 'Save' }).nth(2);
     }
@@ -94,7 +95,9 @@ class QualificationPage extends BasePage{
         await this.page.getByRole('option',{name:competency,exact:true}).click();
         await expect(this.languagecomments).toBeVisible();
         await this.languagecomments.fill(languagecomments);
+        await this.languageForm.locator('.oxd-form-loader').waitFor({ state: 'hidden' });
         await this.languagesave.click();
+        await this.languageForm.locator('.oxd-form-loader').waitFor({ state: 'hidden' });
      }
      async validatelicense(Licence,licencetype,startdate,enddate){
         await this.addlicense.click();

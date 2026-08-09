@@ -14,6 +14,8 @@ class DependantsPage{
         await this.dependenttab.click();
     }
     async verifydependantdetails(DependantName,DependentRelation,Dob,SpecifyDependant){
+        await expect(this.adddependants).toBeVisible();
+        await expect(this.adddependants).toBeEnabled();
         await this.adddependants.click();
         await expect(this.dependantname).toBeVisible();
         await this.dependantname.fill(DependantName);
