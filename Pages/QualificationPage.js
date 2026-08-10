@@ -95,9 +95,15 @@ class QualificationPage extends BasePage{
         await this.page.getByRole('option',{name:competency,exact:true}).click();
         await expect(this.languagecomments).toBeVisible();
         await this.languagecomments.fill(languagecomments);
-        await this.languageForm.locator('.oxd-form-loader').waitFor({ state: 'hidden' });
+        //await this.languageForm.locator('.oxd-form-loader').waitFor({ state: 'hidden' });
+        await expect(this.languageForm.locator('.oxd-form-loader')).toBeHidden({ timeout: 10000 });
+        
+        await expect(this.languagesave).toBeVisible();
+        await expect(this.languagesave).toBeEnabled();
+        
         await this.languagesave.click();
-        await this.languageForm.locator('.oxd-form-loader').waitFor({ state: 'hidden' });
+        await expect(this.languageForm.locator('.oxd-form-loader')).toBeHidden({ timeout: 10000 });
+        
      }
      async validatelicense(Licence,licencetype,startdate,enddate){
         await this.addlicense.click();
