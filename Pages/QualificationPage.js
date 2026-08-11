@@ -32,14 +32,21 @@ class QualificationPage extends BasePage{
         this.fluency=page.locator('.oxd-input-group').filter({ hasText: 'Fluency' }).locator('.oxd-select-text');
         this.competency=page.locator('.oxd-input-group').filter({ hasText: 'Competency' }).locator('.oxd-select-text');
         this.languagecomments =page.locator('.oxd-input-group').filter({ hasText: 'Comments' }).locator('textarea').first();
-        this.languagesave = page.getByRole('button', { name: 'Save' }).nth(2);
+        this.languageForm =  page.locator('form').filter({ hasText: 'Language'});
+        this.languagesave = this.languageForm.getByRole('button', {name: 'Save',exact: true});
+        //page.getByRole('button', { name: 'Save' }).nth(2);
         this.addlicense = page.locator('.orangehrm-action-header').filter({ hasText: 'License' }).getByRole('button',{ name: 'Add' });
         this.licensetype = page.locator('.oxd-input-group').filter({ hasText: 'License Type' }).locator('.oxd-select-text');
         this.licensenumber1 =page.locator('.oxd-input-group').filter({ hasText: 'License Number' }).locator('input');
         this.licenseissuedtae=page.locator('.oxd-input-group').filter({ hasText: 'Issued Date' }).locator('input');
         this.licenseexpirydate=page.locator('.oxd-input-group').filter({ hasText: 'Expiry Date' }).locator('input');
-        this.licensesave =page.getByRole('button', { name: 'Save' }).nth(2);
-        this.languageForm = page.locator('form').nth(3);
+        this.licenseForm = page.locator('form').filter({hasText: 'License'});
+        
+        
+        this.licensesave = this.licenseForm.getByRole('button', {name: 'Save',exact: true});
+        
+        
+        //page.locator('form').nth(3);
         //page.locator('.orangehrm-edit-employee-content').filter({ hasText: 'License' }).getByRole('button', { name: 'Save' });
         //page.getByRole('button', { name: 'Save' }).nth(2);
     }
@@ -115,6 +122,9 @@ class QualificationPage extends BasePage{
         await this.licenseissuedtae.fill(startdate);
         await expect(this.licenseexpirydate).toBeVisible();
         await this.licenseexpirydate.fill(enddate);
+
+    await expect(this.licensesave).toBeVisible();
+    await expect(this.licensesave).toBeEnabled();
         await this.licensesave.click();
 
      }
