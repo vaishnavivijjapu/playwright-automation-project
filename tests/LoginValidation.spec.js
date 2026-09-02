@@ -16,7 +16,7 @@ test('@UILoginValidation',async({page})=>{
    
 })
 
-test('@Login Validation', async ({ page }) => {
+test('@SmokeLogin Validation', async ({ page }) => {
     await loginpage.verifyLoginPageLoaded();
     await loginpage.verifycredentials(dataset.login.username,dataset.login.password);
 

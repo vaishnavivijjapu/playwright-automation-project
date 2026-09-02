@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
     await EmployeeSetup.createEmployee(page, poManager, dataset);
     personalpage = poManager.getPersonalDetails();
 });
-test("@PersonalDetails",async()=>{
+test("@SmokePersonalDetails",async()=>{
 
     await personalpage.verifypersonaldetails(dataset.personaldetails.licencenumber,dataset.personaldetails.licencedate,dataset.personaldetails.nationality,dataset.personaldetails.maritialstatus,dataset.personaldetails.dateofbirth);
     //await personalpage.selectGender(dataset.gender);

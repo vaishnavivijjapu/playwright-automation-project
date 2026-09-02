@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "regression": "npx playwright test",
+    "Addtest" : "npx playwright test AddEmployeeValidation.spec.js ",
+    "smoke" : "npx playwright test --grep @Smoke"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
