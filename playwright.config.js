@@ -17,6 +17,7 @@ export default defineConfig({
     headless: !!process.env.CI,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
+    video: 'retain-on-failure',
     slowMo: process.env.CI ? 0 : 2000
   }
 });

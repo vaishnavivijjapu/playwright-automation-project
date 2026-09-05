@@ -1,6 +1,12 @@
 pipeline {
     agent any
-
+    parameters {
+        choice(
+            name: 'TEST_SUITE',
+            choices: ['smoke', 'regression', 'Addtest'],
+            description: 'Select test suite'
+        )
+    }
     stages {
 
         stage('Checkout') {
@@ -23,8 +29,27 @@ pipeline {
 
         stage('Run Playwright Tests') {
             steps {
-                bat 'npm run regression'
+                 bat "npm run ${TEST_SUITE}"
             }
+        }
+    }
+    post {
+
+        always {
+            archiveArtifacts(
+                artifacts: 'playwright-report/**',
+                allowEmptyArchive: true
+            )
+
+            echo 'Pipeline completed'
+        }
+
+        success {
+            echo 'Playwright tests passed'
+        }
+
+        failure {
+            echo 'Playwright tests failed'
         }
     }
 }
