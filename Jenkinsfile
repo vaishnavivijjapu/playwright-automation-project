@@ -29,7 +29,7 @@ pipeline {
 
         stage('Run Playwright Tests') {
             steps {
-                 bat "npm run ${TEST_SUITE}"
+                 bat "npm run %TEST_SUITE%"
             }
         }
     }
